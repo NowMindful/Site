@@ -24,8 +24,12 @@ body {
   }
   
   nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #f1e8e8;
+  }
+  
+  nav ul li a:hover {
+    color: #007BFF;
   }
   
   main {
