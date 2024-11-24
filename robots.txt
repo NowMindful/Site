@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Optional: Specify Sitemap (Recommended for SEO)
+Sitemap: https://nowmindful.co.uk/sitemap.xml
