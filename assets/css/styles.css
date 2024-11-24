@@ -5,68 +5,190 @@
   font-weight: normal;
   font-style: normal;
 }
-
+/* Default Page (Top Level) */
 body {
-    font-family: 'Poppins', Sans-serif;
+    
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    border: 0;
     background-color: #000000;
   }
-  
+
+h1, h2, h3, p, li, address {
+  font-family: 'Poppins', Sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 20px;
+}
+.progress {
+  background-color: #4caf50;
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+/* Default header */
   header {
-    font-family: 'Poppins', Sans-serif;
     background: #000000;
     color: #fff;
-    padding: 1rem 0;
-    grid-template-columns: auto auto;
+    
   }
   
-  .imageContainer {
-    width: auto; /* Let width adjust automatically */
-    height: 6vw; /* Desired height */
-    max-height: 90px;
-    min-height: 30px;
-    overflow: hidden; /* Trim overflowing parts */
-    display: flex;
+  .hidden {
+    display: none;
+  }
+
+  .show {
+    display: block;
+  }
+
+/* Background overlay for the faded effect */
+#menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0); /* Faded black background */
+  z-index: 9; /* Behind the menu */
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in/out */
+}
+
+/* Centered menu styles */
+#menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the menu */
+  width: 300px; /* Adjust width as needed */
+  background-color: #000000; /* Menu background color */
+  color: #fff; /* Text color */
+  z-index: 10; /* Above the overlay */
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0; /* Initially hidden */
+  pointer-events: none; /* Prevent interaction when hidden */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 10px; /* Optional: Rounded corners */
+}
+
+#menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#menu ul li {
+  margin: 1rem 0;
+}
+
+#menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+#menu ul li a:hover {
+  color: #007BFF;
+}
+
+/* Show menu and overlay */
+#menu.show, #menuOverlay.show {
+  opacity: 1; /* Make visible */
+  pointer-events: all; /* Enable interaction */
+}
+
+#menu.show {
+  transform: translate(-50%, -50%) scale(1); /* Ensure centered position */
+}
+
+
+  
+.intro {
+text-align: center;
+}
+
+
+
+main {
+  
+  background-color: #fff;
+  padding-left: 6vw;
+  padding-right: 6vw;
+}
+/* Top bar container styles */
+.topBarGrid {
+  display: grid; /* Use CSS Grid for layout */
+  grid-template-columns: auto 1fr auto; /* Three sections: Menu, Logo, Play Button */
+  align-items: center; /* Align items vertically in the center */
+  padding: 0.5rem 1rem; /* Add padding for spacing */
+  gap: 1rem; /* Space between sections */
+}
+
+/* Specific sections inside the topBarGrid */
+.menuSection {
+  display: flex; /* Use Flexbox to align SVG properly */
+  align-items: center; /* Center SVG vertically */
+  justify-content: flex-start; /* Align to the left */
+}
+.menuSection svg {
+  width: 30px; /* Consistent width */
+  height: auto; /* Maintain aspect ratio */
+  fill: #fff;
+  cursor: pointer; /* Indicate interactivity */
+}
+.playButtonSection svg {
+  width: 50px; /* Consistent size */
+  height: auto;
+  fill: #fff;
+  cursor: pointer; /* Indicate interactivity */
+}
+/* Logo Section */
+.logoSection {
+  display: flex;
+  justify-content: center; /* Center the logo */
+  align-items: center; /* Vertically align */
+  overflow: hidden; /* Prevent the image from overflowing */
+  height: 100px;
+}
+.headerLogo {
+ 
+  max-width: 100%; /* Ensure the image fits within its container */
+  max-height: 400px; /* Ensure the image does not exceed the container height */
+  object-fit: contain; /* Preserve aspect ratio without cropping */
+  
+}
+
+.playButtonSection {
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+  align-items: center;
+}
+
+  .ImageHeader {
+    text-align: center;
     justify-content: center;
     align-items: center;
   }
-  
-  .headerLogo {
+
+  .headerImage{
     width: auto;
     height: 30vw; /* Stretch to fill the container's height */
-    max-height: 500px;
+    max-height: 100px;
     min-height: 100px;
   }
 
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    height: 2vw; /* Desired height */
-    max-height: 10px;
-  }
-  
-  nav ul li {
-    margin: 0 15px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #f1e8e8;
-  }
-  
-  nav ul li a:hover {
-    color: #007BFF;
-  }
-  
-  main {
-    padding: 20px;
-    background-color: #fff;
-  }
-  
   footer {
     background: #000000;
     color: #fff;
@@ -78,3 +200,67 @@ body {
     color: #007BFF;
     text-decoration: none;
   }
+
+  /* Responsive Design */
+@media (max-width: 768px) {
+  .topBarGrid {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.5rem; /* Reduce padding on smaller screens */
+  }
+
+  .menuSection svg {
+    width: 24px; /* Adjust button sizes for smaller screens */
+  }
+  .playButtonSection svg {
+    width: 34px; /* Adjust button sizes for smaller screens */
+  }
+  .headerLogo {
+    max-height: 200px;
+  }
+  .logoSection {
+    height: 50px;
+  }
+
+  main {
+  
+    background-color: #fff;
+    padding-left: 2vw;
+    padding-right: 2vw;
+  }
+}
+@media (min-width: 1080px) {
+ 
+  main {
+  
+    
+    padding-left: 8vw;
+    padding-right: 8vw;
+  }
+}
+@media (min-width: 1280px) {
+ 
+  main {
+  
+    
+    padding-left: 16vw;
+    padding-right: 16vw;
+  }
+}
+@media (min-width: 1800px) {
+ 
+  main {
+  
+    
+    padding-left: 22vw;
+    padding-right: 22vw;
+  }
+}
+@media (min-width: 2500px) {
+ 
+  main {
+  
+    
+    padding-left: 30vw;
+    padding-right: 30vw;
+  }
+}

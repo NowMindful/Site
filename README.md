@@ -9,5 +9,6 @@ This repository contains the source code for the Now Mindful website, which aims
 - `privacy.html`: Privacy Policy
 - `terms.html`: Terms of Service
 - `projects.html`: Projects page
+- `insights.html`: Insights page
 - `assets/`: Contains CSS, JavaScript, and images
 
